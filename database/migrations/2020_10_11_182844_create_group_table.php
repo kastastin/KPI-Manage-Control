@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDepartmentTable extends Migration
+class CreateGroupTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateDepartmentTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('department');
-        Schema::create('department', function (Blueprint $table) {
+        Schema::create('group', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('faculty_id');
+            $table->integer('department_id');
             $table->string('name');
-            $table->string('short_name');
+            $table->integer('course');
             // $table->foreign('faculty_id')->references('id')->on('faculty');
             $table->rememberToken();
             $table->timestamps();
@@ -32,6 +31,6 @@ class CreateDepartmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('department');
+        Schema::dropIfExists('group');
     }
 }

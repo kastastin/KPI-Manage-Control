@@ -16,4 +16,10 @@
         Departments
     </a>
 </li>
+<li class='nav-item'>
+    <a class='nav-link' href="{{ backpack_url('group') }}">
+        <i class='la la-home nav-icon'></i>
+        Group
+    </a>
+</li>
 

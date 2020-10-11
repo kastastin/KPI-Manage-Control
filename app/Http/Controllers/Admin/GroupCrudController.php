@@ -1,9 +1,9 @@
 <?php namespace App\Http\Controllers\Admin;
 
-use App\Models\Department;
+use App\Models\Group;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
-class DepartmentCrudController extends CrudController
+class GroupCrudController extends CrudController
 {
 
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
@@ -14,9 +14,9 @@ class DepartmentCrudController extends CrudController
 
     public function setup()
     {
-        $this->crud->setModel(Department::class);
-        $this->crud->setRoute(backpack_url('department'));
-        $this->crud->setEntityNameStrings('department', 'Departments');
+        $this->crud->setModel(Group::class);
+        $this->crud->setRoute(backpack_url('group'));
+        $this->crud->setEntityNameStrings('group', 'Group');
     }
 
     public function setupListOperation()
@@ -25,20 +25,19 @@ class DepartmentCrudController extends CrudController
         $this->crud->addColumn([
             'name' => 'name',
             'type' => 'text',
-            'label' => "Кафедра"
+            'label' => "Група"
         ]);
 
         $this->crud->addColumn([
-            'name' => 'faculty.short_name',
+            'name' => 'department.short_name',
             'type' => 'text',
-            'label' => 'Факультет',
-            'function_name' => 'showFacultyName',
+            'label' => 'Кафедра',
         ]);
 
         $this->crud->addColumn([
-            'name' => 'short_name',
+            'name' => 'course',
             'type' => 'text',
-            'label' => "Коротка назва"
+            'label' => "Курс"
         ]);
     }
 
@@ -47,14 +46,14 @@ class DepartmentCrudController extends CrudController
         $this->crud->addField([
             'name' => 'name',
             'type' => 'text',
-            'label' => "Name"
+            'label' => "Група"
         ]);
         $this->crud->addField(
             [
-                'name' => 'faculty_id',
-                'label' => trans('admin.faculty'),
+                'name' => 'department_id',
+                'label' => 'Кафедра',
                 'type' => 'select',
-                'entity' => 'faculty',
+                'entity' => 'department',
                 'attributes' => [
                     'required' => true,
                 ],
@@ -63,9 +62,9 @@ class DepartmentCrudController extends CrudController
 
         );
         $this->crud->addField([
-            'name' => 'short_name',
+            'name' => 'course',
             'type' => 'text',
-            'label' => "Short name"
+            'label' => "Курс"
         ]);
     }
 

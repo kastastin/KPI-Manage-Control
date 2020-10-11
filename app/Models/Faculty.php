@@ -19,4 +19,6 @@ class Faculty extends Model
     public function department() {
         return $this->hasOne('App\Models\Department');
     }
+
+   
 }

@@ -10,4 +10,5 @@ Route::group([
 ], function () { 
     Route::crud('faculty', 'FacultyCrudController');
     Route::crud('department', 'DepartmentCrudController');
+    Route::crud('group', 'GroupCrudController');
 }); 
