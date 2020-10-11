@@ -22,4 +22,10 @@
         Group
     </a>
 </li>
+<li class='nav-item'>
+    <a class='nav-link' href="{{ backpack_url('students') }}">
+        <i class='la la-home nav-icon'></i>
+        Students
+    </a>
+</li>
 

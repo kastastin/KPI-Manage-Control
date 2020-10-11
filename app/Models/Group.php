@@ -22,4 +22,8 @@ class Group extends Model
     function department() {
         return $this->belongsTo('App\Models\Department');
     }
+
+    public function students() {
+        return $this->hasOne('App\Models\Students');
+    }
 }
