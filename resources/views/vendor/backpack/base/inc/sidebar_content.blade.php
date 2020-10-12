@@ -28,4 +28,28 @@
         Students
     </a>
 </li>
+<li class='nav-item'>
+    <a class='nav-link' href="{{ backpack_url('disciplines') }}">
+        <i class='la la-home nav-icon'></i>
+        Disciplines
+    </a>
+</li>
+<li class='nav-item'>
+    <a class='nav-link' href="{{ backpack_url('teachers') }}">
+        <i class='la la-home nav-icon'></i>
+        Teachers
+    </a>
+</li>
+<li class='nav-item'>
+    <a class='nav-link' href="{{ backpack_url('schedule') }}">
+        <i class='la la-home nav-icon'></i>
+        Schedule
+    </a>
+</li>
+<li class='nav-item'>
+    <a class='nav-link' href="{{ backpack_url('settings_university') }}">
+        <i class='la la-home nav-icon'></i>
+        Settings University
+    </a>
+</li>
 

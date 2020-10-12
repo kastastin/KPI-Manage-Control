@@ -12,4 +12,8 @@ Route::group([
     Route::crud('department', 'DepartmentCrudController');
     Route::crud('group', 'GroupCrudController');
     Route::crud('students', 'StudentsCrudController');
+    Route::crud('disciplines', 'DisciplinesCrudController');
+    Route::crud('teachers', 'TeachersCrudController');
+    Route::crud('schedule', 'ScheduleCrudController');
+    Route::crud('settings_university', 'Settings_UniversityCrudController');
 }); 

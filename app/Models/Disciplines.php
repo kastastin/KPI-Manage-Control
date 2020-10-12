@@ -6,27 +6,20 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Faculty;
 use App\Models\Department;
+use App\Models\Group;
+use App\Models\Schedule;
 
-class Group extends Model
+class Disciplines extends Model
 {
     use CrudTrait;
 
-    protected $table = 'group';
+    protected $table = 'disciplines';
     protected $fillable = [
-        'department_id',
         'name',
-        'course',
         'password',
     ];
 
-    function department() {
-        return $this->belongsTo('App\Models\Department');
-    }
-
-    public function students() {
-        return $this->hasOne('App\Models\Students');
-    }
-    public function schedule() {
+    function schedule() {
         return $this->hasOne('App\Models\Schedule');
     }
 }
