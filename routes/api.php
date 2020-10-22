@@ -23,8 +23,10 @@ Route::group([
     Route::put('faculty/{id}', "FacultyApiController@update");
     Route::delete('faculty/{id}', "FacultyApiController@delete");
 
-    //Route::get('faculty', "DepartmentApiController@getAll");
+    Route::get('department', "DepartmentApiController@getAll");
+    Route::get('department/{id}', "DepartmentApiController@getById");
 });
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
