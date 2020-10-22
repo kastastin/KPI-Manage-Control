@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group([
+    'namespace' => 'App\Http\Controllers\Api',
+], function () {
+    Route::get('faculty', "FacultyApiController@getAll");
+    Route::get('faculty/{id}', "FacultyApiController@getById");
+    Route::post('faculty', "FacultyApiController@save");
+    Route::put('faculty/{id}', "FacultyApiController@update");
+    Route::delete('faculty/{id}', "FacultyApiController@delete");
+
+    //Route::get('faculty', "DepartmentApiController@getAll");
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

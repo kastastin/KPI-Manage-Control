@@ -18,12 +18,21 @@ class Department extends Model
         'password',
     ];
 
+    protected $appends = [
+        'faculty_name'
+    ];
+
     function faculty() {
         return $this->belongsTo('App\Models\Faculty');
     }
 
     public function group() {
         return $this->hasOne('App\Models\Group');
+    }
+
+    public function getFacultyNameAttribute()
+    {
+        return $this->faculty()->first()->short_name ?? "-";
     }
 
     public function showFacultyName() {
