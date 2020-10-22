@@ -21,6 +21,15 @@ class Students extends Model
         'password',
     ];
 
+    protected $appends = [
+        'group_name'
+    ];
+
+    public function getGroupNameAttribute()
+    {
+        return $this->group()->first()->name ?? "-";
+    }
+
     function group() {
         return $this->belongsTo('App\Models\Group');
     }

@@ -22,6 +22,29 @@ class Schedule extends Model
         'classroom',
         'password',
     ];
+
+    protected $appends = [
+        'group_name',
+        'disciplines_name',
+        'teachers_name'
+    ];
+
+    public function getGroupNameAttribute()
+    {
+        return $this->group()->first()->name ?? "-";
+    }
+
+    public function getDisciplinesNameAttribute()
+    {
+        return $this->disciplines()->first()->name ?? "-";
+    }
+
+    public function getTeachersNameAttribute()
+    {
+        return $this->teachers()->first()->name ?? "-";
+    }
+
+    
     
     function teachers() {
         return $this->belongsTo('App\Models\Teachers');
